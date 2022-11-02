@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://127.0.0.1:51004/view/51 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>index.rst—D:\sphinx\pycon-sphinx-tutorial\crawler\docs</title>
+    <link rel="stylesheet" type="text/css" href="./index_files/github.css">
+  </head>
+  <body>
+    <div class="container">
+      <div id="markup">
+        <article id="content" class="markdown-body"><div class="document">
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#welcome-to-gis-class-session-6" id="id1">Welcome to GIS Class Session 6!</a><ul>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#a-session-objectives" id="id2">A. Session Objectives</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#b-create-a-new-grass-database" id="id3">B. Create a new GRASS database</a><ul>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#running-grass-gis-in-windows" id="id4">1. Running GRASS GIS in Windows</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#define-grass-directory-location-and-mapset" id="id5">2. Define GRASS directory, location, and mapset</a><ul>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#a-create-or-select-a-grass-database-directory" id="id6">a. Create or select a GRASS database directory</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#b-create-or-select-a-grass-database-location" id="id7">b. Create or select a GRASS database location</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#c-selecting-a-location-s-crs" id="id8">c. Selecting a location's CRS</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#d-enter-the-epsg-code-of-your-preferred-crs" id="id9">d. Enter the EPSG code of your preferred CRS</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#e-select-a-datum-transformation" id="id10">e. Select a datum transformation</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#f-summary-of-gis-location-and-project" id="id11">f. Summary of GIS location and project</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#g-run-the-gis-application" id="id12">g. Run the GIS application</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#c-grass-gis-data-processing" id="id13">C. GRASS GIS Data Processing</a><ul>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#import-a-raster-image-using-r-in-gdal" id="id14">1. Import a raster image using r.in.gdal</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#set-the-environmental-settings" id="id15">2. Set the environmental settings</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#import-a-vector-data-for-region-8-provinces" id="id16">3. Import a vector data for region 8 provinces</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#erase-columns-from-the-attribute-table-of-imported-vector-data" id="id17">4. Erase columns from the attribute table of imported vector data</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#add-a-new-column-and-assign-a-value-of-1" id="id18">5. Add a new column and assign a value of 1</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#convert-vector-to-raster" id="id19">6. Convert vector to raster</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#change-the-region-area-of-interest-to-the-non-zero-extent-of-the-samarisland" id="id20">7. Change the region area of interest to the non-zero extent of the samarisland</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#limit-processing-only-within-the-island-of-samar" id="id21">8. Limit processing only within the island of Samar</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#delineate-a-watershed-basin-boundary" id="id22">9. Delineate a watershed basin boundary</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#delineate-a-synthetic-river-stream" id="id23">10. Delineate a synthetic river/stream</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#generate-a-landform-map" id="id24">11. Generate a landform map</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#remove-mask-of-the-current-grass-location" id="id25">12. Remove mask of the current GRASS location</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#d-opening-grass-database-in-qgistm" id="id26">D. Opening GRASS database in QGIS<sup>TM</sup></a><ul>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#open-a-new-project-in-qgis" id="id27">1. Open a new project in QGIS</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#change-a-project-s-crs" id="id28">2. Change a project's CRS</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#open-a-grass-database-in-qgis" id="id29">3. Open a GRASS database in QGIS</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#load-map-layers-from-grass-database" id="id30">4. Load map layers from GRASS database</a></li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#modify-the-appearance-of-the-vgeomorph-raster-layer" id="id31">5. Modify the appearance of the <tt class="docutils literal">vgeomorph</tt> raster layer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://127.0.0.1:51004/view/51#e-create-a-map-composition-in-qgis" id="id32">E. Create a map composition in QGIS</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="welcome-to-gis-class-session-6">
+<h1><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id1">Welcome to GIS Class Session 6!</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%">
+</colgroup>
+<tbody valign="top">
+<tr><td>Renato A. Folledo, Jr.</td>
+</tr>
+<tr><td>Isabela State University Cabagan Campus</td>
+</tr>
+<tr><td>Date: 22 October 22</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="a-session-objectives">
+<h2><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id2">A. Session Objectives</a></h2>
+<p>We will use GRASS GIS in this session 6 of our GIS class.
+After this session, the students are able to:</p>
+<p>1. Use GRASS GIS application and setup a new GRASS database
+3. Generate a watershed boundary map and a network of synthetic map of rivers/streams
+4. Create a landform map</p>
+</div>
+<div class="section" id="b-create-a-new-grass-database">
+<h2><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id3">B. Create a new GRASS database</a></h2>
+<div class="section" id="running-grass-gis-in-windows">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id4">1. Running GRASS GIS in Windows</a></h3>
+<p>Click Windows Start menu, and type <tt class="docutils literal">grass</tt> and
+Windows will autofill the rest of the <tt class="docutils literal">GRASS GIS 7.8.7</tt>
+as shown below.</p>
+<div class="figure">
+<img alt="_img/grassWindows10.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xncmFzc1dpbmRvd3MxMC5wbmc=" style="width: 488.5px; height: 396.5px;">
+<p class="caption">Figure 1. Opening GRASS GIS application in Windows 10</p>
+</div>
+</div>
+<div class="section" id="define-grass-directory-location-and-mapset">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id5">2. Define GRASS directory, location, and mapset</a></h3>
+<blockquote>
+<ol class="loweralpha simple">
+<li>Directory – simply a folder that stores grass database</li>
+<li>Location – a subfolder of Directory that must have the same Coordinate Reference System (CRS)</li>
+<li>Mapset – a user folder, esp. useful in a shared network of computers.
+The default is the <tt class="docutils literal">PERMANENT</tt> mapset which only the creator can edit. Other users can read (but not write/modify) maps from the <tt class="docutils literal">PERMANENT</tt> mapset. Each network use must create their own mapset</li>
+</ol>
+</blockquote>
+<div class="figure">
+<img alt="_img/grassOpen.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xncmFzc09wZW4ucG5n" style="width: 752.8000000000001px; height: 290.8px;">
+<p class="caption">Figure 2. GRASS GIS startup windows</p>
+</div>
+<div class="section" id="a-create-or-select-a-grass-database-directory">
+<h4><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id6">a. Create or select a GRASS database directory</a></h4>
+<p>Click the <tt class="docutils literal">Browse</tt> button in Figure 3 to choose or create a new GRASS database directory</p>
+<div class="figure">
+<img alt="_img/grassDirectory.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xncmFzc0RpcmVjdG9yeS5wbmc=">
+<p class="caption">Figure 3. Create a GRASS GIS database directory</p>
+</div>
+</div>
+<div class="section" id="b-create-or-select-a-grass-database-location">
+<h4><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id7">b. Create or select a GRASS database location</a></h4>
+<p>Enter the folder name of your new GRASS database location, then click the <tt class="docutils literal">Next</tt> button.</p>
+<div class="figure">
+<img alt="_img/grassLocation.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xncmFzc0xvY2F0aW9uLnBuZw==">
+<p class="caption">Figure 4. Create or select a GRASS GIS location</p>
+</div>
+</div>
+<div class="section" id="c-selecting-a-location-s-crs">
+<h4><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id8">c. Selecting a location's CRS</a></h4>
+<p>There are several ways to select your preferred CRS,
+but this is the easiest if you know the EPSG code of your preferred CRS.
+Select <tt class="docutils literal">Select EPSG code of spatial reference system</tt> and click the <tt class="docutils literal">Next</tt> button.</p>
+<div class="figure">
+<img alt="_img/grassSelectEPSG.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xncmFzc1NlbGVjdEVQU0cucG5n">
+<p class="caption">Figure 5. Create or select a GRASS GIS location</p>
+</div>
+</div>
+<div class="section" id="d-enter-the-epsg-code-of-your-preferred-crs">
+<h4><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id9">d. Enter the EPSG code of your preferred CRS</a></h4>
+<p>Enter 32651 to use UTM 51N. The set <strong>coordinate reference system (CRS)</strong> upon initialization cannot be modifed again in the future.</p>
+<div class="figure">
+<img alt="_img/grassDefineLocation.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xncmFzc0RlZmluZUxvY2F0aW9uLnBuZw==">
+<p class="caption">Figure 6. Enter the EPSG code</p>
+</div>
+</div>
+<div class="section" id="e-select-a-datum-transformation">
+<h4><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id10">e. Select a datum transformation</a></h4>
+<p>Just click the <tt class="docutils literal">OK</tt> button to select the default WGS 84 datum</p>
+<div class="figure">
+<img alt="_img/grassDatum.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xncmFzc0RhdHVtLnBuZw==">
+<p class="caption">Figure 7. Select the WGS84 datum</p>
+</div>
+</div>
+<div class="section" id="f-summary-of-gis-location-and-project">
+<h4><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id11">f. Summary of GIS location and project</a></h4>
+<p>Verify the parameters of your newly created GIS database and CRS projection.
+Click the <tt class="docutils literal">Finish</tt> button if you are satisfied.</p>
+<div class="figure">
+<img alt="_img/grassLocationSummary.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xncmFzc0xvY2F0aW9uU3VtbWFyeS5wbmc=">
+<p class="caption">Figure 8. Select the WGS84 datum</p>
+</div>
+</div>
+<div class="section" id="g-run-the-gis-application">
+<h4><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id12">g. Run the GIS application</a></h4>
+<p>An empty GRASS database with your choosen CRS has been created. Click the <tt class="docutils literal">Start GRASS session</tt> button to start developing maps.</p>
+<div class="figure">
+<img alt="_img/grassReady.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xncmFzc1JlYWR5LnBuZw==">
+<p class="caption">Figure 9. Ready to run a GRASS GIS session</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="c-grass-gis-data-processing">
+<h2><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id13">C. GRASS GIS Data Processing</a></h2>
+<p>GRASS GIS application has 3 default windows upon opening. These include the (1) GRASS console, (2) GRASS GIS Map Display Layer, and the (3) GRASS Map Display Layer Manager as shown in Figure 10.</p>
+<div class="figure">
+<img alt="_img/grassApplication.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xncmFzc0FwcGxpY2F0aW9uLnBuZw==">
+<p class="caption">Figure 10. GRASS GIS application windows</p>
+</div>
+<div class="section" id="import-a-raster-image-using-r-in-gdal">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id14">1. Import a raster image using r.in.gdal</a></h3>
+<p>The newly created GRASS database is still empty. The only data added in the previous section is the CRS for the map location.</p>
+<pre class="code codehilite">r.in.gdal input=D:/Jun_turnover_files/DEM/dem_region8.tif output=dem8 --o
+
+g.message "check to see if dem8 raster exists"
+g.list raster
+</pre>
+<dl class="docutils">
+<dt>The <tt class="docutils literal">r.in.gdal</tt> command has 2 parameters and the 3rd called switch:</dt>
+<dd><ol class="first last loweralpha simple">
+<li><tt class="docutils literal">input</tt> paramater: name of the input digital elevation model</li>
+<li><tt class="docutils literal">output</tt> parameter: name of the output raster</li>
+<li><tt class="docutils literal"><span class="pre">--o</span></tt> switch: overwrites the output name if the raster already exists</li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="set-the-environmental-settings">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id15">2. Set the environmental settings</a></h3>
+<p>Run the following code in GRASS GIS console</p>
+<pre class="code codehilite">g.region -p
+</pre>
+<p>The <tt class="docutils literal">g.region <span class="pre">-p</span></tt> will show that the area of interest is only 1x1 pixel.
+GRASS GIS ignores any data outside the area of interest.
+We should change it to follow the extent of the imported raster.</p>
+<pre class="code codehilite">g.region raster=dem8 -p
+</pre>
+<p>The area of interest should now coincide with the extent of dem8 raster.
+The <tt class="docutils literal"><span class="pre">-p</span></tt> switch will display in the console the new area of interest as follows:</p>
+<pre class="code codehilite">projection: 1 (UTM)
+zone:       51
+datum:      wgs84
+ellipsoid:  wgs84
+north:      1404933.42444022
+south:      1088857.53130764
+west:       621147.95217289
+east:       821935.08880942
+nsres:      30.56826819
+ewres:      30.5705141
+rows:       10340
+cols:       6568
+cells:      67913120
+</pre>
+</div>
+<div class="section" id="import-a-vector-data-for-region-8-provinces">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id16">3. Import a vector data for region 8 provinces</a></h3>
+<pre class="code codehilite">v.in.ogr input=D:/gisclass/samarisland.geojson output=samarisland --o
+
+g.message "check if the output vector is created"
+g.list vector
+</pre>
+</div>
+<div class="section" id="erase-columns-from-the-attribute-table-of-imported-vector-data">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id17">4. Erase columns from the attribute table of imported vector data</a></h3>
+<pre class="code codehilite">v.db.dropcolumn map=samarisland columns=ID_0,ISO,ID_1,NAME_0,VARNAME_1,NL_NAME_1,HASC_1,CC_1,TYPE_1,ENGTYPE_1,VALIDFR_1,VALIDTO_1,REMARKS_1
+
+g.message "check column names"
+db.columns table=samarisland
+g.message "the remaining columns are cat, NAME_1, Shape_Leng, Shape_Area"
+</pre>
+</div>
+<div class="section" id="add-a-new-column-and-assign-a-value-of-1">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id18">5. Add a new column and assign a value of 1</a></h3>
+<pre class="code codehilite">g.message "add an column name imask"
+v.db.addcolumn map=samarisland columns="imask integer"
+g.message "assign a value of 1 to imask column"
+v.db.update map=samarisland column=imask value=1
+</pre>
+</div>
+<div class="section" id="convert-vector-to-raster">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id19">6. Convert vector to raster</a></h3>
+<p>The code below will create a raster with a value of 1 for the 3 provinces of Samar, the rest will have a value of zero</p>
+<pre class="code codehilite">v.to.rast input=samarisland type=area output=samisland use=attr attribute_column=imask value=1 --o
+</pre>
+</div>
+<div class="section" id="change-the-region-area-of-interest-to-the-non-zero-extent-of-the-samarisland">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id20">7. Change the region area of interest to the non-zero extent of the samarisland</a></h3>
+<p>The code below will reduce the extent of the area of interest in our analysis.
+The <tt class="docutils literal">g.region <span class="pre">-p</span></tt> will display their difference before and after
+running the <tt class="docutils literal">g.region zoom=samisland</tt> code</p>
+<pre class="code codehilite">g.message "display region extent"
+g.region -p
+
+g.message "reduce the extent of the region area of interest"
+g.region zoom=samisland
+
+g.message "display region again to see changes in number of rows and cols"
+g.region -p
+</pre>
+</div>
+<div class="section" id="limit-processing-only-within-the-island-of-samar">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id21">8. Limit processing only within the island of Samar</a></h3>
+<p>The <tt class="docutils literal">rmask</tt> module will limit data processing only within the non-zero pixel
+of the samisland raster. The rest are ignored.</p>
+<pre class="code codehilite">r.mask raster=samisland
+</pre>
+</div>
+<div class="section" id="delineate-a-watershed-basin-boundary">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id22">9. Delineate a watershed basin boundary</a></h3>
+<pre class="code codehilite">r.watershed elevation=dem8 threshold=50000 basin=d.basin stream=d.stream --o
+</pre>
+<p>The <tt class="docutils literal">r.watershed</tt> module above delineates a watershed basin boundary
+and stream network from a digital elevation model (DEM).  Use <tt class="docutils literal">dem8</tt> as the input DEM,
+threshold or a minimum <tt class="docutils literal">50,000</tt> pixels (resolution is 30x30 meter) to be considered a watershed. Any sub-watershed that has less than 50,000 pixels are ignored, leading to empty pixels
+along the coastal areas. The outputs are:</p>
+<ol class="arabic simple">
+<li>basin=d.basin – where <tt class="docutils literal">d.basin</tt> is a raster of watershed basin delineation</li>
+<li>d.stream – a raster file of “synthetic” network of rivers and stream.</li>
+<li>“--o” switch allows overwriting of existing output rasters</li>
+</ol>
+</div>
+<div class="section" id="delineate-a-synthetic-river-stream">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id23">10. Delineate a synthetic river/stream</a></h3>
+<p>The <tt class="docutils literal">r.watershed</tt> command above also delineates a raster of synthetic river network.
+The code below converts it from raster to vector format.</p>
+<pre class="code codehilite">g.message "1. r.thin decreases the width rivers/streams into 1 pixel wide only,
+while the length is unlimited"
+r.thin --o input=d.stream output=stream_thin
+
+g.message "2. raster to vector conversion"
+r.to.vect --o type=line input=stream_thin output=vstream
+</pre>
+<p>The <tt class="docutils literal">vstream</tt> is the output network of streams/rivers in a vector format.</p>
+</div>
+<div class="section" id="generate-a-landform-map">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id24">11. Generate a landform map</a></h3>
+<pre class="code codehilite">r.geomorphon elevation=dem8 forms=rgeomorph flat=5
+r.category rgeomorph
+</pre>
+<p>The output of the <tt class="docutils literal">r.category rgeomorph</tt> is as follows:</p>
+<pre class="code codehilite">1       flat
+2       summit
+3       ridge
+4       shoulder
+5       spur
+6       slope
+7       hollow
+8       footslope
+9       valley
+10      depression
+</pre>
+<p>Click <a class="reference external" href="https://grass.osgeo.org/grass80/manuals/r.geomorphon.html">r.geomorphon</a> for more details about the geomorphology map output.</p>
+</div>
+<div class="section" id="remove-mask-of-the-current-grass-location">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id25">12. Remove mask of the current GRASS location</a></h3>
+<p>The GRASS location mask set using the <tt class="docutils literal">r.mask</tt> module is saved,
+and will remain until you remove it using</p>
+<pre class="code codehilite">r.mask -r
+</pre>
+</div>
+</div>
+<div class="section" id="d-opening-grass-database-in-qgistm">
+<h2><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id26">D. Opening GRASS database in QGIS<sup>TM</sup></a></h2>
+<p>Finally, display the GRASS output in QGIS in order to be able to compose
+a beautiful map composition. Although GRASS GIS can display a map,
+QGIS is better in composing maps.</p>
+<div class="section" id="open-a-new-project-in-qgis">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id27">1. Open a new project in QGIS</a></h3>
+<p>Run the QGIS application and create a blank project by double-clicking the <tt class="docutils literal">New Empty Project</tt> highlighted in blue in Figure 11.</p>
+<div class="figure">
+<img alt="_img/qgisStart.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xxZ2lzU3RhcnQucG5n">
+<p class="caption">Figure 11. GRASS GIS application windows</p>
+</div>
+</div>
+<div class="section" id="change-a-project-s-crs">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id28">2. Change a project's CRS</a></h3>
+<p>Notice however that the default CRS upon opening QGIS is WGS84 with EPSG 4326.
+To change your project DRC, select the EPSG 4326 on bottom-right of
+QGIS encircled with red in Figure 12,
+which opens the <tt class="docutils literal">Project Properties | CRS</tt> in Figure 13.</p>
+<div class="figure">
+<img alt="_img/qgisEPSG.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xxZ2lzRVBTRy5wbmc=">
+<p class="caption">Figure 12. GRASS GIS application windows</p>
+</div>
+<p>The <tt class="docutils literal">Filter</tt> box with highlighted with a red circle in Figure 13, enter 32651.
+Finally, click the <tt class="docutils literal">WGS 84 / UTM 51N</tt> highlight in blue and encircled with yellow in Figure 13.
+Click the <tt class="docutils literal">OK</tt> button to close the <tt class="docutils literal">Properties</tt> window.</p>
+<div class="figure">
+<img alt="_img/qgisPropertiesCRS.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xxZ2lzUHJvcGVydGllc0NSUy5wbmc=">
+<p class="caption">Figure 13. GRASS GIS application windows</p>
+</div>
+</div>
+<div class="section" id="open-a-grass-database-in-qgis">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id29">3. Open a GRASS database in QGIS</a></h3>
+<p>Next, click the pulldown menu <tt class="docutils literal">Plugins</tt> ==&gt; <tt class="docutils literal">GRASS</tt> ==&gt; <tt class="docutils literal">Open Mapset</tt> as shown in Figure 14.</p>
+<div class="figure">
+<img alt="_img/qgisOpenMapset.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xxZ2lzT3Blbk1hcHNldC5wbmc=">
+<p class="caption">Figure 14. GRASS GIS application windows</p>
+</div>
+<p>Select the <tt class="docutils literal">GRASS database folder</tt>, <tt class="docutils literal">Location</tt>, and <tt class="docutils literal">Mapset</tt> menu as shown in Figure 15 and click <tt class="docutils literal">OK</tt>.
+If you cannot remember where you saved you GRASS database, you must reopen GRASS GIS until you see
+the GRASS startup window like in Figure 2.</p>
+<div class="figure">
+<img alt="_img/qgisSelectMapset.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xxZ2lzU2VsZWN0TWFwc2V0LnBuZw==">
+<p class="caption">Figure 15. GRASS GIS application windows</p>
+</div>
+<p>After opening a GRASS Mapset, QGIS will display a red rectange (see Figure 16)
+showing the <tt class="docutils literal">g.region</tt> extent of your GRASS database.</p>
+<div class="figure">
+<img alt="_img/qgisMapsetOutline.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xxZ2lzTWFwc2V0T3V0bGluZS5wbmc=">
+<p class="caption">Figure 16. Red outline showing the region extent of the GRASS mapset</p>
+</div>
+</div>
+<div class="section" id="load-map-layers-from-grass-database">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id30">4. Load map layers from GRASS database</a></h3>
+<p>Although GRASS has a good display of map layers,
+QGIS is better in composing a map for printing or digital display.
+It is therefore recommended to generate map layers in GRASS GIS,
+and then layout a map composition in QGIS.</p>
+<p>Use the <strong>Browser</strong> panel (see Figure 17) to search for specific map layers
+from GRASS database. In my example, I save my GRASS database in <tt class="docutils literal"><span class="pre">D:\Session6</span></tt>,
+my <strong>Location</strong> in <tt class="docutils literal">sessionLocation</tt>, and <tt class="docutils literal">PERMANENT</tt> as my <strong>Mapset</strong>.
+The <strong>Browser</strong> panel marks a <em>GRASS database</em> <tt class="docutils literal">Session6</tt> with a <strong>database icon</strong>,
+the <em>Location</em> <tt class="docutils literal"><span class="pre">D:\Session6\sessionLocation</span></tt>  with a <strong>GRASS icon</strong>,
+the <em>Mapset</em> <tt class="docutils literal"><span class="pre">D:\Session6\sessionLocation\PERMANET</span></tt> with a <strong>mapset icon,</strong>
+and the different layers, whether <em>raster</em>, <em>polygon</em>, or <em>line</em> lyers
+with appropriate icons to easily classify them as shown in Figure 17.</p>
+<p>Drag the <tt class="docutils literal">vgeomorph</tt> raster to the <strong>Layers</strong> panel.
+The layer is <tt class="docutils literal">vgeomorph</tt> layer is not yet visible so
+we have to change its color in the next step.</p>
+<div class="figure">
+<img alt="_img/qgisLoadGrassLayer.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xxZ2lzTG9hZEdyYXNzTGF5ZXIucG5n">
+<p class="caption">Figure 17. The <strong>Browser</strong> panel displays the location and layer names
+from a GRASS GIS database. The <strong>Layers</strong> panel shows the map layers loaded
+in the current QGIS project.</p>
+</div>
+</div>
+<div class="section" id="modify-the-appearance-of-the-vgeomorph-raster-layer">
+<h3><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id31">5. Modify the appearance of the <tt class="docutils literal">vgeomorph</tt> raster layer</a></h3>
+<p>Right-click the <tt class="docutils literal">vgeomorph</tt> raster on the <strong>Layers</strong> panel and click <strong>Properties</strong>
+(see Figure 17) to display the <tt class="docutils literal">Layer Properties</tt> as shown in Figure 18.
+On the left, click <strong>Symbology</strong> (encircled with red in Figure 18),
+click the <strong>Render type</strong> ==&gt; <strong>Paletted/Unique values</strong> (encircled with purple in Figure 18),
+and then click <strong>Classify</strong> (encircled with yellow in Figure 18).
+Finally, enter the <strong>Label</strong> for each raster category following the
+corresponding labels from Figure 19.</p>
+<p>Click <tt class="docutils literal">OK</tt> to close the <tt class="docutils literal">Layer Properties</tt> window. The map should now be visible
+with a color scheme similar to the map composition displayed in Figure 20.</p>
+<div class="figure">
+<img alt="_img/qgisLayerProperties.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xxZ2lzTGF5ZXJQcm9wZXJ0aWVzLnBuZw==">
+<p class="caption">Figure 18. The <strong>Symbology</strong> property of a selected map layer.</p>
+</div>
+<div class="figure">
+<img alt="_img/qgisLayerLegend.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xxZ2lzTGF5ZXJMZWdlbmQucG5n">
+<p class="caption">Figure 19. <strong>Label</strong> and <strong>color</strong> properties for each raster layer category.</p>
+</div>
+</div>
+</div>
+<div class="section" id="e-create-a-map-composition-in-qgis">
+<h2><a class="toc-backref" href="http://127.0.0.1:51004/view/51#id32">E. Create a map composition in QGIS</a></h2>
+<p>Create the <strong>Map Composition</strong> (see Figure 20) in QGIS, applying the lesson we have learned
+in the previous class sessions.</p>
+<div class="figure">
+<img alt="_img/qgisOutputMap.png" src="./index_files/RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcX2ltZ1xxZ2lzT3V0cHV0TWFwLnBuZw==">
+<p class="caption">Figure 20. Geomorphology Map</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+      </div>
+    </div>
+  
+  <script type="text/x-omnimarkup-config;executed=true">
+    window.App.Context = {
+      buffer_id: 51,
+      timestamp: '1666935779.412554',
+      revivable_key: 'RDpcc3BoaW54XHB5Y29uLXNwaGlueC10dXRvcmlhbFxjcmF3bGVyXGRvY3NcaW5kZXgucnN0'
+    };
+    window.App.Options = {
+      ajax_polling_interval: 500,
+      mathjax_enabled: false
+    };
+  </script>
+  <script type="text/javascript" src="./index_files/jquery-2.1.3.min.js.download"></script>
+  <script type="text/javascript" src="./index_files/imagesloaded.pkgd.min.js.download"></script>
+  <script type="text/javascript" src="./index_files/app.js.download"></script>
+
+</body></html>
